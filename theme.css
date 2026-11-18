@@ -1,0 +1,97 @@
+/* SOMA × design final — temas por tela (carregado depois de style.css)
+   login: azul-claro · Hoje/Tarefas: claro · Recompensas: verde · demais: azul-marinho */
+:root{--navy:#011a3f;--lilac:#7668b2;--violet:#6d4cf6;--sky:#c9e1f0;--lime:#88cf41;--ink:#0b1b3a;--soft:#5b6b8c}
+body[data-theme]{background:var(--pg,var(--navy))}
+body[data-theme=navy]{--pg:var(--navy);--bg:var(--navy)}
+body[data-theme=light]{--pg:#fff;--bg:#fff;--text:var(--ink);--muted:var(--soft);--line:#dde4f2}
+body[data-page=tarefas]{--pg:#f7fbfe}
+body[data-theme=green]{--pg:var(--lime);--bg:var(--lime);--text:var(--ink);--muted:#2f4a14;--line:#ffffff40}
+body[data-theme] .app-shell{background:var(--pg)}
+.page-heading h1{font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-1px}
+
+/* menu lateral: pílulas brancas, como no design */
+.nav-link{background:#fff;color:var(--ink);border-radius:999px;border-color:transparent;min-height:40px}
+.nav-link:hover{background:#eef2ff;color:var(--ink)}
+.nav-link.active{background:var(--violet);color:#fff;border:0;box-shadow:0 6px 16px #6d4cf64d}
+.nav-link .nav-ico{width:22px;height:22px;object-fit:contain}
+.nav-link.active .ln{filter:brightness(0) invert(1)}
+.nav-link kbd{color:#7b88a6}.nav-link.active kbd{color:#ddd6ff}
+body[data-theme=navy] .sidebar{background:#01142f}
+body[data-theme=navy] .topbar{background:#011a3fcc}
+body[data-theme=navy] .card{background:#ffffff0a;border:1px solid #96beff47;border-radius:22px;box-shadow:none}
+
+/* temas claro e verde: elementos que ficavam em tom escuro */
+body.lg .sidebar{background:#fff;border-color:var(--line)}
+body[data-theme=green] .sidebar{background:transparent;border-color:transparent}
+body.lg .sidebar-profile,body.lg .sidebar-level{background:#fff;border-color:var(--line)}
+body.lg .sidebar-profile strong,body.lg .level-top b,body.lg .brand,body.lg .breadcrumb strong{color:var(--ink)}
+body.lg :is(.sidebar-profile span,.sidebar-profile button,.level-top,.sidebar-level p,.nav-label,.logout-link,.sidebar-foot,.sidebar-foot span,.breadcrumb,.top-date,.app-footer){color:#4d5d7e}
+body.lg .topbar{background:#ffffffcc;border-color:var(--line)}
+body[data-theme=green] .topbar{background:#88cf41cc;border-color:#ffffff40}
+body.lg :is(.icon-btn,.mobile-menu){background:#fff;border-color:var(--line);color:var(--ink)}
+body.lg .app-footer{border-color:var(--line)}
+body[data-theme=green] .app-footer{color:#2f4a14;border-color:#ffffff40}
+body.lg .mini-progress,body[data-theme=light] .progress-track{background:#dfe5f5}
+body.lg .page-content{color:var(--ink)}
+body[data-theme=light] .card{background:#fff;border-color:#dde4f2;box-shadow:0 8px 24px #1b2a5d12}
+body[data-theme=light] :is(.page-heading p,.stat-top,.stat-foot,.card-title-row p,.task-main span,.task-time,.level-chip span,.goal-mini-pct,.activity-line span,.activity-line time,.tip-card p,.legend-row,.daily-ring span,.task-summary-text span,.goal-mini-info strong,.eyebrow){color:var(--soft)}
+body[data-theme=light] .task-row{background:#dfe5fb;border-color:#cdd5f6}
+body[data-theme=light] .task-row:nth-child(even){background:#fbe4ee;border-color:#f6cfe0}
+body[data-theme=light] .task-row:hover{border-color:var(--violet)}
+body[data-theme=light] :is(.task-emoji,.goal-mini-icon){background:#ffffffa6}
+body[data-theme=light] .task-check{border-color:var(--violet)}
+body[data-theme=light] .task-row.is-done .task-main strong{color:#7c88a6}
+body[data-theme=light] .filter-tab{background:#fff;color:#4d5d7e;border-radius:999px;border-color:#dde4f2}
+body[data-theme=light] .filter-tab.active{background:var(--violet);color:#fff;border-color:var(--violet)}
+body[data-theme=light] .search-box{background:#fff;border-color:#dde4f2;color:var(--soft)}
+body[data-theme=light] .search-box input{color:var(--ink)}
+body[data-theme=light] .task-summary{background:#d9defa}
+body[data-theme=light] .quick-action{background:#f1f4ff;color:var(--ink);border-color:#dde4f2}
+body[data-theme=light] .pill{background:#eceffd;color:#4d5d7e}
+body[data-theme=light] .pill.purple{background:#6d4cf622;color:#4b2fd0}
+body[data-theme=light] .secondary-btn{background:#fff;color:var(--ink);border-color:#cdd5ea}
+body[data-theme=light] .daily-ring{background:conic-gradient(var(--violet) var(--pct,60%),#e3e8f7 0)}
+body[data-theme=light] .daily-ring:before{background:#fff}
+body[data-theme=light] .activity-line{border-color:#e5eaf6}
+/* Hoje: painel roxo da cidade + cartão de notícias com contorno */
+body[data-theme=light] .city-preview{background:linear-gradient(170deg,#8a7cc6,var(--lilac));border-color:var(--lilac);color:#fff}
+body[data-theme=light] .city-preview :is(h3,p,strong,b,span){color:#fff}
+body[data-theme=light] .city-preview .progress-track{background:#ffffff40}
+body[data-theme=light] .card:has(.activity-line){border:2px solid var(--lilac);border-radius:26px}
+.fab{position:fixed;right:30px;bottom:34px;width:58px;height:58px;border-radius:50%;border:0;background:var(--violet);color:#fff;font-size:32px;line-height:1;box-shadow:0 12px 28px #6d4cf666;z-index:9}
+
+/* recompensas (tela verde) */
+.rewards{position:relative;min-height:620px;display:flex;flex-direction:column;align-items:center;text-align:center;overflow:hidden}
+.rewards h1{font:800 clamp(24px,3.2vw,38px)/1.2 Outfit,sans-serif;margin:8px 0 26px;max-width:640px;letter-spacing:-.8px}
+.rw-pair{display:flex;gap:38px;margin-bottom:20px}
+.rw-item{display:flex;flex-direction:column;align-items:center;gap:8px;font:800 20px Outfit,sans-serif}
+.rw-orb{width:84px;height:84px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 10px 24px #2b5a0f40}
+.rw-orb img{width:56px}.rw-orb svg{width:48px}
+.rw-btn{background:var(--violet);color:#fff;border:0;border-radius:999px;padding:14px 46px;font-weight:700;font-size:15px;box-shadow:0 10px 26px #4a2fc055;position:relative;z-index:2}
+.rw-foot{margin:12px 0 0;font-size:12px;font-weight:700;color:#24400f;position:relative;z-index:2}
+.rw-city{width:min(760px,100%);margin-top:-22px;filter:drop-shadow(0 22px 24px #0000004d)}
+.rw-panel{position:absolute;top:0;right:0;width:250px;background:#34b457;border-radius:14px;padding:12px;text-align:left;display:flex;flex-direction:column;gap:8px;z-index:2}
+.rw-task{background:#ffffff26;border-radius:8px;padding:8px 10px;font-weight:700;color:#fff;font-size:12px;display:flex;gap:8px}
+.rw-task.done{text-decoration:line-through;opacity:.8}
+
+/* login (tela azul-claro) */
+.login-screen{background:var(--sky)!important}
+.login-glow,.login-art{display:none}
+.login-wrap{display:block;width:min(440px,100%);min-height:0;background:#ffffff8c;border:1px solid #fff;border-radius:28px;box-shadow:0 24px 60px #3a6a9055}
+.login-panel{background:transparent;padding:40px 38px;color:var(--ink)}
+.login-mobile-brand{display:flex!important;justify-content:center;margin-bottom:26px;color:var(--ink)}
+.login-heading{text-align:center;margin-bottom:22px}
+.login-heading h2,.login-form>label{color:var(--ink)}
+:is(.login-heading p,.login-heading .eyebrow,.login-note,.signup-line,.login-options,.login-divider){color:#4a6580}
+.field-wrap{background:#fff;border:1.5px solid #8fa9bf;border-radius:999px}
+.field-wrap input{color:var(--ink)}.field-wrap input::placeholder{color:#8aa0b4}
+:is(.field-icon,.password-toggle){color:#5b7590}
+.login-divider span{background:#9db8cc}
+.guest-btn{background:#fff;color:var(--ink);border-color:#9db8cc;border-radius:999px}
+.login-submit{border-radius:999px}
+.brand-dot,.link-button{color:var(--violet)}
+.social-row{display:flex;justify-content:center;gap:22px;margin:24px 0 2px}
+.social-row button{width:46px;height:46px;border-radius:50%;border:0;background:#fff;display:grid;place-items:center;box-shadow:0 6px 16px #3a6a9040}
+.social-row svg{width:24px;height:24px}
+
+@media(max-width:900px){.rw-panel{position:static;width:100%;margin-bottom:18px}body[data-theme=green] .sidebar{background:#76bb36}.fab{right:18px;bottom:20px}}
